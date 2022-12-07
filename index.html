@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bit Flip</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        font-family: sans-serif;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+
+      .navigation-menu {
+        text-align: right;
+        position: fixed;
+        width: 100%;
+      }
+      .navigation-menu-link {
+        text-decoration: none;
+        color: #333;
+        display: inline-block;
+      }
+      .navigation-menu-button {
+        padding: 8px 16px;
+        border-radius: 4px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .pricing-table {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+      .pricing-tier {
+        text-align: left;
+        padding: 20px;
+      }
+      .pricing-tier-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+      .pricing-tier-price {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      .pricing-tier-features {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .pricing-tier-feature {
+        margin-bottom: 10px;
+      }
+
+      .pricing-tier-button {
+        margin-top: 20px;
+      }
+
+      .post-request {
+        font-family: monospace;
+        font-size: 1.2em;
+        background-color: #fafafa;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .post-request-title {
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .post-request-description {
+        color: #333;
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+      .post-request-method {
+        color: #333;
+        font-weight: bold;
+      }
+      .post-request-url {
+        color: #000;
+      }
+      .post-request-body {
+        margin-top: 10px;
+      }
+      .post-request-body-key {
+        color: #333;
+      }
+      .post-request-body-value {
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navigation-menu">
+      <a class="navigation-menu-button" href="/upgrade"
+        >Flip your bit (upgrade)</a
+      >
+    </nav>
+
+    <h1>Bit Flip</h1>
+    <p>An easy way to keep track of whether something is off or is on.</p>
+    <p>
+      Make a POST request to a unique identifer of your choice and the rest is
+      done for you!
+    </p>
+    <div class="post-request">
+      <div class="post-request-title">Set a bit</div>
+      <div class="post-request-method">POST</div>
+      <div class="post-request-url">https://api.bitflip.com/bits/12345</div>
+      <div class="post-request-response">was `true`, now `false`</div>
+    </div>
+    <div class="post-request">
+      <div class="post-request-title">Get a bit</div>
+      <div class="post-request-method">GET</div>
+      <div class="post-request-url">https://api.bitflip.com/bits/12345</div>
+      <div class="post-request-response">`false`</div>
+    </div>
+
+    <h2>Example Use Cases</h2>
+    <ul>
+      <li>
+        <strong>Continuous Integration (CI) pipelines:</strong> Bit Flip could
+        be used in a CI pipeline to track the status of various stages in the
+        pipeline. For example, you could use Bit Flip to set a "migration
+        complete" flag after running database migrations, or to track whether a
+        particular test has passed or failed.
+      </li>
+      <li>
+        <strong>Application configuration:</strong> Bit Flip could be used to
+        store and manage application configuration settings. For example, you
+        could use Bit Flip to store settings such as whether a feature is
+        enabled or disabled, or whether a particular service is running or not.
+      </li>
+      <li>
+        <strong>Workflow tracking:</strong> Bit Flip could be used to track the
+        progress of a workflow or process. For example, you could use Bit Flip
+        to track the status of a customer support ticket, or to track the
+        progress of a project through different stages of development.
+      </li>
+      <li>
+        <strong>IoT applications:</strong> Bit Flip could be used in IoT
+        applications to store and manage the state of various sensors and
+        devices. For example, you could use Bit Flip to store the current
+        temperature in a thermostat, or to track whether a door is open or
+        closed.
+      </li>
+    </ul>
+    <h2>For ${group}, Bit Flip is..</h2>
+    <ul>
+      <li>
+        <b>{Developers and software engineers}</b>: a simple way to store and
+        manage binary data for live applications.
+      </li>
+      <li>
+        <b>{Project managers and team leaders}</b>: an easy way to track the
+        status of tasks and processes using binary flags.
+      </li>
+      <li>
+        <b>{Data analysts and scientists}</b>: a convenient way to store and
+        manipulate binary data as part of their work.
+      </li>
+      <li>
+        <b>{Business owners and entrepreneurs}</b>: a way to use binary data to
+        track the success of marketing campaigns or sales initiatives.
+      </li>
+      <li>
+        <b>{Anyone}</b>: a simple and convenient way to keep track of binary
+        data without having to worry about setting up and maintaining a separate
+        data storage system.
+      </li>
+    </ul>
+    <h2>Why Bit Flip tho?</h2>
+    <ul>
+      <li>
+        <b>Ease of use</b>: Bit Flip is easy to use because it has a simple API
+        and a user-friendly interface, which makes it accessible to people of
+        all skill levels.
+      </li>
+      <li>
+        <b>Flexibility</b>: Bit Flip is flexible because it allows customers to
+        store and manage binary data in a variety of ways, which makes it
+        suitable for a wide range of applications.
+      </li>
+      <li>
+        <b>Speed</b>: Bit Flip is super fast because it runs on edge functions,
+        which allows it to process data quickly and efficiently.
+      </li>
+      <li>
+        <b>Stability</b>: Bit Flip is super stable because it runs on a reliable
+        infrastructure, which ensures that it is always available and can handle
+        high volumes of data.
+      </li>
+      <li>
+        <b>Security</b>: Bit Flip is highly secure because it uses encryption to
+        protect data, and offers private namespaces for customers who want to
+        keep their bits safe from prying eyes.
+      </li>
+    </ul>
+
+    <div class="pricing-table">
+      <div class="pricing-tier">
+        <h3 class="pricing-tier-title">Free</h3>
+        <div class="pricing-tier-price">$0/month</div>
+        <ul class="pricing-tier-features">
+          <li class="pricing-tier-feature">Public namespaces</li>
+          <li class="pricing-tier-feature">
+            No guarantee that your bits will remain as you last flipped them
+          </li>
+          <li class="pricing-tier-feature">Limit of 30 bits per week</li>
+          <li class="pricing-tier-feature">Limit bit size to 6 characters</li>
+        </ul>
+      </div>
+      <div class="pricing-tier">
+        <h3 class="pricing-tier-title">Paid</h3>
+        <div class="pricing-tier-price">$5/month</div>
+        <ul class="pricing-tier-features">
+          <li class="pricing-tier-feature">Private namespaces</li>
+          <li class="pricing-tier-feature">
+            Ability to register your own namespace
+          </li>
+          <li class="pricing-tier-feature">
+            Bits are guaranteed to remain as you last flipped them
+          </li>
+          <li class="pricing-tier-feature">Unlimited number of bits</li>
+          <li class="pricing-tier-feature">Increased rate limit</li>
+          <li class="pricing-tier-feature">Increased key size</li>
+          <li class="pricing-tier-feature">
+            Dedicated storage with no limit to cache size
+          </li>
+          <li class="pricing-tier-feature">No key expiration</li>
+        </ul>
+
+        <button class="pricing-tier-button">Okay, I'll bit(e)</button>
+      </div>
+    </div>
+    <button>Sign Up</button>
+    <footer>
+      <b>Enterprise agreements are available on request.</b> Please note that
+      FlipBit is not intended for use in life or death services, and should not
+      be relied upon for critical applications."
+    </footer>
+  </body>
+</html>
+
+<!--
+
+
+    I want to see which PRs are included in this release, so I set a key for
+    each one as it merges like {pr-name}-{release-name}. I use a built-in search
+    feature to get a list of matching bits when it's time.
+
+-->
