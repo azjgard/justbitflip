@@ -3,115 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <title>Bit Flip</title>
-    <style>
-      * {
-        margin: 0;
-      }
-      body {
-        font-family: sans-serif;
-        text-align: center;
-      }
-      h1 {
-        font-size: 2em;
-        margin-bottom: 20px;
-      }
-      p {
-        font-size: 1.2em;
-        margin-bottom: 20px;
-      }
-
-      .navigation-menu {
-        text-align: right;
-        position: fixed;
-        width: 100%;
-      }
-      .navigation-menu-link {
-        text-decoration: none;
-        color: #333;
-        display: inline-block;
-      }
-      .navigation-menu-button {
-        padding: 8px 16px;
-        border-radius: 4px;
-        background-color: #333;
-        color: #fff;
-        text-decoration: none;
-        display: inline-block;
-      }
-
-      .pricing-table {
-        display: flex;
-        justify-content: space-between;
-        margin: 20px 0;
-      }
-      .pricing-tier {
-        text-align: left;
-        padding: 20px;
-      }
-      .pricing-tier-title {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-      }
-      .pricing-tier-price {
-        font-size: 2em;
-        margin-bottom: 20px;
-      }
-      .pricing-tier-features {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .pricing-tier-feature {
-        margin-bottom: 10px;
-      }
-
-      .pricing-tier-button {
-        margin-top: 20px;
-      }
-
-      .post-request {
-        font-family: monospace;
-        font-size: 1.2em;
-        background-color: #fafafa;
-        padding: 10px;
-        border-radius: 4px;
-      }
-      .post-request-title {
-        color: #333;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      .post-request-description {
-        color: #333;
-        font-style: italic;
-        margin-bottom: 10px;
-      }
-      .post-request-method {
-        color: #333;
-        font-weight: bold;
-      }
-      .post-request-url {
-        color: #000;
-      }
-      .post-request-body {
-        margin-top: 10px;
-      }
-      .post-request-body-key {
-        color: #333;
-      }
-      .post-request-body-value {
-        color: #000;
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav class="navigation-menu">
-      <a class="navigation-menu-button" href="/upgrade"
-        >Flip your bit (upgrade)</a
-      >
+      <div class="logo">
+        <h2>BitFlip <span id="bit">&nbsp;</span></h2>
+      </div>
+      <div class="nav">
+        <ul>
+          <li>Documentation</li>
+          <li>Contact</li>
+        </ul>
+      </div>
     </nav>
-
-    <h1>Bit Flip</h1>
+    <p class="top caps">Store and retrieve data</p>
     <p>An easy way to keep track of whether something is off or is on.</p>
     <p>
       Make a POST request to a unique identifer of your choice and the rest is

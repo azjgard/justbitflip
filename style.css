@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+nav .logo {
+  margin-left: 30px;
+  font-size: 40px;
+}
+nav .logo h2 {
+  position: relative;
+  display: flex;
+}
+#bit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+#bit::after {
+  position: absolute;
+  content: "|";
+  color: #b58b8b;
+  font-size: 35px;
+  animation: cursor-flip 2s infinite;
+  animation-delay: 5s;
+}
+
+@keyframes cursor-flip {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-right: 30px;
+}
+nav ul li {
+  margin-right: 30px;
+}
+nav + * {
+  margin-top: 82px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.navigation-menu {
+  text-align: right;
+  position: fixed;
+  width: 100%;
+}
+.navigation-menu-link {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+}
+.navigation-menu-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.pricing-table {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.pricing-tier {
+  text-align: left;
+  padding: 20px;
+}
+.pricing-tier-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.pricing-tier-price {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.pricing-tier-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pricing-tier-feature {
+  margin-bottom: 10px;
+}
+
+.pricing-tier-button {
+  margin-top: 20px;
+}
+
+.post-request {
+  font-family: monospace;
+  font-size: 1.2em;
+  background-color: #fafafa;
+  padding: 10px;
+  border-radius: 4px;
+}
+.post-request-title {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.post-request-description {
+  color: #333;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.post-request-method {
+  color: #333;
+  font-weight: bold;
+}
+.post-request-url {
+  color: #000;
+}
+.post-request-body {
+  margin-top: 10px;
+}
+.post-request-body-key {
+  color: #333;
+}
+.post-request-body-value {
+  color: #000;
+}
