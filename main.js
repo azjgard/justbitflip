@@ -12,7 +12,7 @@ const displayError = (e) => {
 };
 
 const displaySuccessMessage = (message) => {
-  $("#success-toast .toast-body").text(message);
+  $("#success-toast .toast-body").html(message);
   $("#success-toast").toast("show");
 };
 
@@ -48,7 +48,9 @@ storeRequestSubmitButton.addEventListener("click", async () => {
         "Content-Type": contentTypeHeader,
       },
     });
-    displaySuccessMessage("Data was stored successfully in `" + key + "` ");
+    displaySuccessMessage(
+      "<span>Data stored successfully in <strong>" + key + "</strong> "
+    );
   } catch (e) {
     displayError(e);
   }
