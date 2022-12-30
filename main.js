@@ -12,6 +12,7 @@ const storeRequestPayloadInput = document.getElementById(
 const storeRequestSubmitButton = document.getElementById(
   "store-request--submit-button"
 );
+
 storeRequestSubmitButton.addEventListener("click", async () => {
   const key = storeRequestKeyInput.value;
   const payload = storeRequestPayloadInput.value;
@@ -40,6 +41,7 @@ const readRequestOutput = document.getElementById("read-request--output");
 const readRequestSubmitButton = document.getElementById(
   "read-request--submit-button"
 );
+
 readRequestSubmitButton.addEventListener("click", async () => {
   const key = readRequestKeyInput.value;
 
@@ -56,4 +58,23 @@ readRequestSubmitButton.addEventListener("click", async () => {
     $("#error-toast .toast-body").text(e.message);
     $("#error-toast").toast("show");
   }
+});
+
+const getRandomValue = (size) =>
+  btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(size))))
+    .replaceAll("+", "x")
+    .replaceAll("/", "I")
+    .slice(0, size);
+
+const randomValue = getRandomValue(8);
+storeRequestKeyInput.value = randomValue;
+readRequestKeyInput.value = randomValue;
+
+storeRequestKeyInput.addEventListener("input", (e) => {
+  const value = e.target.value;
+  readRequestKeyInput.value = value;
+});
+readRequestKeyInput.addEventListener("input", (e) => {
+  const value = e.target.value;
+  storeRequestKeyInput.value = value;
 });
