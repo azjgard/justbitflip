@@ -26,7 +26,7 @@ storeRequestSubmitButton.addEventListener("click", async () => {
 
   try {
     await axios.post(`${BASE_URL}${key}`, payloadParsed);
-    readRequestSubmitButton.classList.remove("loading");
+    storeRequestSubmitButton.classList.remove("loading");
   } catch (e) {
     console.error(e);
     storeRequestSubmitButton.classList.remove("loading");
@@ -49,13 +49,15 @@ readRequestSubmitButton.addEventListener("click", async () => {
 
   try {
     const result = await axios.get(`${BASE_URL}${key}`);
-    readRequestOutput.textContent = result.data;
+    readRequestOutput.textContent = JSON.stringify(result.data);
     readRequestSubmitButton.classList.remove("loading");
   } catch (e) {
+    const message = e.response && e.response.data ? e.response.data : e.message;
     console.error(e);
+    console.info(message);
     readRequestSubmitButton.classList.remove("loading");
     $("#error-toast .title").text("Failed to get bit");
-    $("#error-toast .toast-body").text(e.message);
+    $("#error-toast .toast-body").text(message);
     $("#error-toast").toast("show");
   }
 });
