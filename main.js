@@ -1,5 +1,7 @@
 import "./style.css";
 import axios from "axios";
+import bit0 from "./bit0.svg";
+import bit1 from "./bit1.svg";
 
 const BASE_URL = "https://api.justbitflip.com/v1/bits/";
 
@@ -16,6 +18,9 @@ const displaySuccessMessage = (message) => {
   $("#success-toast").toast("show");
 };
 
+//
+// Functionality for the "store" request button
+//
 const storeRequestKeyInput = document.getElementById(
   "store-request--key-input"
 );
@@ -58,6 +63,9 @@ storeRequestSubmitButton.addEventListener("click", async () => {
   storeRequestSubmitButton.classList.remove("loading");
 });
 
+//
+// Functionality for the "read" request button
+//
 const readRequestKeyInput = document.getElementById("read-request--key-input");
 const readRequestOutput = document.getElementById("read-request--output");
 const readRequestSubmitButton = document.getElementById(
@@ -79,6 +87,9 @@ readRequestSubmitButton.addEventListener("click", async () => {
   readRequestSubmitButton.classList.remove("loading");
 });
 
+//
+// Generate random values to populate the demo inputs with
+//
 const getRandomValue = (size) =>
   btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(size))))
     .replaceAll("+", "x")
@@ -97,3 +108,13 @@ readRequestKeyInput.addEventListener("input", (e) => {
   const value = e.target.value;
   storeRequestKeyInput.value = value;
 });
+
+//
+// Functionality for the logo to bit flip
+//
+const bitIcon = document.querySelector("#logo img");
+let currentBit = 0;
+setInterval(() => {
+  currentBit = currentBit === 0 ? 1 : 0;
+  bitIcon.src = currentBit === 0 ? bit0 : bit1;
+}, 1500);
