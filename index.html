@@ -16,14 +16,77 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/index-e9da657c.js"></script>
+    <!-- GA -->
+    <script>
+      !(function () {
+        var analytics = (window.analytics = window.analytics || []);
+        if (!analytics.initialize)
+          if (analytics.invoked)
+            window.console &&
+              console.error &&
+              console.error("Segment snippet included twice.");
+          else {
+            analytics.invoked = !0;
+            analytics.methods = [
+              "trackSubmit",
+              "trackClick",
+              "trackLink",
+              "trackForm",
+              "pageview",
+              "identify",
+              "reset",
+              "group",
+              "track",
+              "ready",
+              "alias",
+              "debug",
+              "page",
+              "once",
+              "off",
+              "on",
+              "addSourceMiddleware",
+              "addIntegrationMiddleware",
+              "setAnonymousId",
+              "addDestinationMiddleware",
+            ];
+            analytics.factory = function (e) {
+              return function () {
+                var t = Array.prototype.slice.call(arguments);
+                t.unshift(e);
+                analytics.push(t);
+                return analytics;
+              };
+            };
+            for (var e = 0; e < analytics.methods.length; e++) {
+              var key = analytics.methods[e];
+              analytics[key] = analytics.factory(key);
+            }
+            analytics.load = function (key, e) {
+              var t = document.createElement("script");
+              t.type = "text/javascript";
+              t.async = !0;
+              t.src =
+                "https://cdn.segment.com/analytics.js/v1/" +
+                key +
+                "/analytics.min.js";
+              var n = document.getElementsByTagName("script")[0];
+              n.parentNode.insertBefore(t, n);
+              analytics._loadOptions = e;
+            };
+            analytics._writeKey = "AvTFSBnmHtoBJdSMiNHlalT09ozUZgwu";
+            analytics.SNIPPET_VERSION = "4.15.2";
+            analytics.load("AvTFSBnmHtoBJdSMiNHlalT09ozUZgwu");
+            analytics.page();
+          }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-c9d4a40b.js"></script>
     <link rel="stylesheet" href="/assets/index-25292ae1.css">
   </head>
   <body>
     <div class="app">
       <header>
         <h1 id="logo">BitFlip</h1>
-        <!-- <a href="https://api.justbitflip.com" tabindex="1">Documentation</a> -->
       </header>
       <div class="explainer">
         <p>The simplest key-value store that you've ever used.</p>
@@ -34,9 +97,7 @@
         </ul>
       </div>
       <h2>Try it out</h2>
-      <p>There's only two endpoints!</p>
       <div class="demo">
-        <!-- <h3>Store data in a key</h3> -->
         <p class="small-header">Store data in a key:</p>
         <div class="request">
           <div class="request--header">
@@ -72,7 +133,6 @@
             >
           </div>
         </div>
-        <!-- <h3>Read data from a key</h3> -->
         <p class="small-header">Read data from a key:</p>
         <div class="request">
           <div class="request--header">
@@ -116,17 +176,6 @@
         <li>Rate limit of <strong>60</strong> requests/minute</li>
         <li>LRU eviction after <strong>500MB</strong></li>
       </ul>
-      <!-- <h3>Won't other people be able to read/write over my data?</h3>
-      <p>
-        Only if they can guess your key! You can fix this by ensuring that your
-        keys are
-        <a
-          href="https://en.wikipedia.org/wiki/Universally_unique_identifier"
-          target="_blank"
-          rel="noopener noreferrer"
-          >sufficiently random</a
-        >.
-      </p> -->
       <div
         id="error-toast"
         class="toast"
