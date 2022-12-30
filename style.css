@@ -32,11 +32,6 @@ header {
 header h1 {
   font-size: 50px;
 }
-h1,
-h2,
-h3 {
-  /* font-weight: bold; */
-}
 .small-header {
   margin-bottom: 5px;
   font-weight: 500;
@@ -135,4 +130,38 @@ textarea,
   position: fixed;
   right: 50px;
   bottom: 50px;
+}
+
+.request--submit:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+@media screen and (max-width: 630px) {
+  header {
+    padding-top: 0;
+  }
+  .app {
+    padding: 10px 20px;
+  }
+  .request--header {
+    display: block;
+  }
+  .request--input-container {
+    margin-top: 10px;
+  }
+  .request--input-container--input {
+    min-width: 0px;
+  }
+  .request--submit {
+    margin: 10px 0 0 0;
+  }
+  .request--submit--container {
+    display: flex;
+    justify-content: flex-end;
+  }
 }

@@ -87,16 +87,16 @@
         <h1 id="logo">BitFlip</h1>
       </header>
       <div class="explainer">
-        <p>The simplest key-value store that you've ever used.</p>
+        <p>The most effortless key-value store you've ever used.</p>
         <ul>
-          <li>Free</li>
+          <li>No account</li>
           <li>No setup</li>
-          <li>Simple to use</li>
+          <li>Free to use</li>
         </ul>
       </div>
       <h2>Try it out</h2>
       <div class="demo">
-        <p class="small-header">Store data in a key:</p>
+        <p class="small-header">Store data in a key</p>
         <div class="request">
           <div class="request--header">
             <div class="request--badge-container">
@@ -113,17 +113,19 @@
                 tabindex="2"
               />
             </div>
-            <button
-              id="store-request--submit-button"
-              type="button"
-              class="btn btn-primary request--submit"
-              tabindex="3"
-            >
-              Submit
-              <span class="request--submit--spinner-container">
-                <span class="spinner-border" role="status"></span>
-              </span>
-            </button>
+            <div class="request--submit--container">
+              <button
+                id="store-request--submit-button"
+                type="button"
+                class="btn btn-primary request--submit"
+                tabindex="3"
+              >
+                Submit
+                <span class="request--submit--spinner-container">
+                  <span class="spinner-border" role="status"></span>
+                </span>
+              </button>
+            </div>
           </div>
           <div class="request--body">
             <textarea id="store-request--payload-input" tabindex="4" rows="1">
@@ -131,7 +133,7 @@
             >
           </div>
         </div>
-        <p class="small-header">Read data from a key:</p>
+        <p class="small-header">Read data from a key</p>
         <div class="request">
           <div class="request--header">
             <div class="request--badge-container">
@@ -148,17 +150,19 @@
                 tabindex="5"
               />
             </div>
-            <button
-              id="read-request--submit-button"
-              type="button"
-              class="btn btn-primary request--submit"
-              tabindex="6"
-            >
-              Submit
-              <span class="request--submit--spinner-container">
-                <span class="spinner-border" role="status"></span>
-              </span>
-            </button>
+            <div class="request--submit--container">
+              <button
+                id="read-request--submit-button"
+                type="button"
+                class="btn btn-primary request--submit"
+                tabindex="6"
+              >
+                Submit
+                <span class="request--submit--spinner-container">
+                  <span class="spinner-border" role="status"></span>
+                </span>
+              </button>
+            </div>
           </div>
           <div id="read-request--output" class="request--response">
             <span class="request--response--placeholder"
@@ -167,7 +171,15 @@
           </div>
         </div>
       </div>
-      <h2>Limitations</h2>
+      <p>
+        Worried about other people reading/writing your data? Consider
+        generating keys that are
+        <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier"
+          >sufficiently random</a
+        >
+        so as to prevent others from guessing them.
+      </p>
+      <h2>Current Limitations</h2>
       <ul>
         <li>Max key size of <strong>256</strong> characters</li>
         <li>Max value size of <strong>1KB</strong></li>
