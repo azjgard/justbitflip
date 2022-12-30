@@ -3,6 +3,19 @@ import axios from "axios";
 
 const BASE_URL = "https://api.justbitflip.com/v1/bits/";
 
+const displayError = (e) => {
+  const message = e.response && e.response.data ? e.response.data : e.message;
+  console.error(e);
+  $("#error-toast .title").text("Failed to set bit");
+  $("#error-toast .toast-body").text(message);
+  $("#error-toast").toast("show");
+};
+
+const displaySuccessMessage = (message) => {
+  $("#success-toast .toast-body").text(message);
+  $("#success-toast").toast("show");
+};
+
 const storeRequestKeyInput = document.getElementById(
   "store-request--key-input"
 );
@@ -35,14 +48,12 @@ storeRequestSubmitButton.addEventListener("click", async () => {
         "Content-Type": contentTypeHeader,
       },
     });
-    storeRequestSubmitButton.classList.remove("loading");
+    displaySuccessMessage("Data was stored successfully in `" + key + "` ");
   } catch (e) {
-    console.error(e);
-    storeRequestSubmitButton.classList.remove("loading");
-    $("#error-toast .title").text("Failed to set bit");
-    $("#error-toast .toast-body").text(e.message);
-    $("#error-toast").toast("show");
+    displayError(e);
   }
+
+  storeRequestSubmitButton.classList.remove("loading");
 });
 
 const readRequestKeyInput = document.getElementById("read-request--key-input");
@@ -59,16 +70,11 @@ readRequestSubmitButton.addEventListener("click", async () => {
   try {
     const result = await axios.get(`${BASE_URL}${key}`);
     readRequestOutput.textContent = JSON.stringify(result.data);
-    readRequestSubmitButton.classList.remove("loading");
   } catch (e) {
-    const message = e.response && e.response.data ? e.response.data : e.message;
-    console.error(e);
-    console.info(message);
-    readRequestSubmitButton.classList.remove("loading");
-    $("#error-toast .title").text("Failed to get bit");
-    $("#error-toast .toast-body").text(message);
-    $("#error-toast").toast("show");
+    displayError(e);
   }
+
+  readRequestSubmitButton.classList.remove("loading");
 });
 
 const getRandomValue = (size) =>
