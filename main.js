@@ -96,7 +96,7 @@ const getRandomValue = (size) =>
     .replaceAll("/", "I")
     .slice(0, size);
 
-const randomValue = getRandomValue(8);
+const randomValue = `random-key-${getRandomValue(8)}`;
 storeRequestKeyInput.value = randomValue;
 readRequestKeyInput.value = randomValue;
 
