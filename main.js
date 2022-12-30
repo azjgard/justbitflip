@@ -19,13 +19,22 @@ storeRequestSubmitButton.addEventListener("click", async () => {
 
   storeRequestSubmitButton.classList.add("loading");
 
+  const isJson = /^\{(.|\n)*\}$/.test(payload);
+  const contentTypeHeader = isJson ? "application/json" : "text/plain";
+
   let payloadParsed = payload;
-  try {
-    payloadParsed = JSON.parse(payload);
-  } catch {}
+  if (isJson) {
+    try {
+      payloadParsed = JSON.parse(payload);
+    } catch {}
+  }
 
   try {
-    await axios.post(`${BASE_URL}${key}`, payloadParsed);
+    await axios.post(`${BASE_URL}${key}`, payloadParsed, {
+      headers: {
+        "Content-Type": contentTypeHeader,
+      },
+    });
     storeRequestSubmitButton.classList.remove("loading");
   } catch (e) {
     console.error(e);
