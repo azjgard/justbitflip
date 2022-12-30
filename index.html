@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bit Flip</title>
+    <title>BitFlip</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap"
       rel="stylesheet"
     />
-    <!-- GA -->
+    <!-- Segment -->
     <script>
       !(function () {
         var analytics = (window.analytics = window.analytics || []);
@@ -84,7 +86,7 @@
   <body>
     <div class="app">
       <header>
-        <h1 id="logo">BitFlip</h1>
+        <h1 id="logo"><img src="./bit0.svg" /> BitFlip</h1>
       </header>
       <div class="explainer">
         <p>The most effortless key-value store you've ever used.</p>
@@ -174,9 +176,13 @@
       <p>
         Worried about other people reading/writing your data? Consider
         generating keys that are
-        <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="noopener noreferrer">UUIDs</a
-          >sufficiently random</a
+        <a
+          href="https://en.wikipedia.org/wiki/Universally_unique_identifier"
+          target="_blank"
+          rel="noopener noreferrer"
         >
+          sufficiently random
+        </a>
         so as to prevent others from guessing them.
       </p>
       <h2>Current Limitations</h2>
