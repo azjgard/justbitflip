@@ -89,13 +89,11 @@
         <h1 id="logo"><img src="./bit0.svg" /> BitFlip</h1>
       </header>
       <div class="explainer">
-        <p>
-          An effortless key-value store. No account, no setup, and free to use.
-        </p>
+        <p>The simplest key-value store you've never used.</p>
         <ol>
-          <li>Generate a key</li>
-          <li>Store data in that key with a request</li>
-          <li>Read or update that data at any time with subsequent requests</li>
+          <li>No accounts</li>
+          <li>No setup</li>
+          <li>Free to use</li>
         </ol>
       </div>
       <h2>Try it out</h2>
@@ -136,13 +134,23 @@
               id="store-request--payload-input"
               tabindex="4"
               rows="1"
-              placeholder="Nothing"
+              placeholder="An empty payload will store or flip a bit"
             >
 { "example": "editable data" }
 </textarea
             >
           </div>
         </div>
+        <ul>
+          <li>
+            Supports JSON or plain text data (determined by
+            <code>Content-Type</code> request header)
+          </li>
+          <li>
+            Send an empty POST request to toggle a key's value between
+            <code>true</code> and <code>false</code> (bit flip!)
+          </li>
+        </ul>
         <p class="small-header">Read data from a key</p>
         <div class="request">
           <div class="request--header">
@@ -177,19 +185,21 @@
           <div id="read-request--output" class="request--response"></div>
         </div>
       </div>
-      <p>
-        Worried about other people reading/writing your data? Consider
-        generating keys that are
-        <a
-          href="https://en.wikipedia.org/wiki/Universally_unique_identifier"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          sufficiently random
-        </a>
-        so as to prevent others from guessing them.
-      </p>
-      <h2>Current Limitations</h2>
+      <ul>
+        <li>
+          Worried about other people overwriting (or reading) your data?
+          Generate keys that are
+          <a
+            href="https://en.wikipedia.org/wiki/Universally_unique_identifier"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            sufficiently random
+          </a>
+          to prevent others from guessing them.
+        </li>
+      </ul>
+      <h2>Limits</h2>
       <ul>
         <li>Max key size of <strong>256</strong> characters</li>
         <li>Max value size of <strong>1KB</strong></li>
