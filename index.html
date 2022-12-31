@@ -89,12 +89,14 @@
         <h1 id="logo"><img src="./bit0.svg" /> BitFlip</h1>
       </header>
       <div class="explainer">
-        <p>An effortless key-value store.</p>
-        <ul>
-          <li>No account</li>
-          <li>No setup</li>
-          <li>Free to use</li>
-        </ul>
+        <p>
+          An effortless key-value store. No account, no setup, and free to use.
+        </p>
+        <ol>
+          <li>Generate a key</li>
+          <li>Store data in that key with a request</li>
+          <li>Read or update that data at any time with subsequent requests</li>
+        </ol>
       </div>
       <h2>Try it out</h2>
       <div class="demo">
@@ -130,8 +132,14 @@
             </div>
           </div>
           <div class="request--body">
-            <textarea id="store-request--payload-input" tabindex="4" rows="1">
-{ "data": "This is editable example data." }</textarea
+            <textarea
+              id="store-request--payload-input"
+              tabindex="4"
+              rows="1"
+              placeholder="Nothing"
+            >
+{ "example": "editable data" }
+</textarea
             >
           </div>
         </div>
@@ -166,11 +174,7 @@
               </button>
             </div>
           </div>
-          <div id="read-request--output" class="request--response">
-            <span class="request--response--placeholder"
-              >The response will appear here..</span
-            >
-          </div>
+          <div id="read-request--output" class="request--response"></div>
         </div>
       </div>
       <p>
